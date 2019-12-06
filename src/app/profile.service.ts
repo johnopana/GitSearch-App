@@ -12,10 +12,10 @@ export class ProfileService {
 
   constructor(private http:Http) { 
     console.log("service is ready"!);
-    this.username ="Opana";
+    this.username =" Johnopana";
   }
   getprofileInfo(){
-    return this.http.get()
+    return this.http.get("http://github.com + this.username + "?client_id =" +  this.client + &client_secrete =" + this .clientsecret );
 
   }
   
