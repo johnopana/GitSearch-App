@@ -24,7 +24,16 @@
                      <span class="lebel lebel-success">{{profile.public_gists}} Public gists</span> 
                      <span class="lebel lebel-info">{{profile.public_repos}} Public Repos</span>
                  </p>
-                 <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-md">view profile on github</a> </p>   
+                 <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-md">view profile on github</a></p>
+                 <div class="panel-heading">
+                     <h3 class="panel-title">Repos</h3>
+                     </div>
+                    <div class="panel-body" *ngFor="let repo of repos">
+                     <p>
+                         
+                     </p>   
+                    </div> 
+                 </div>   
                 </div>
             </div>
         </div>

@@ -15,7 +15,13 @@ export class ProfileService {
     this.username =" Johnopana";
   }
   getprofileInfo(){
-    return this.http.get("http://github.com + this.username + "?client_id =" +  this.client + &client_secrete =" + this .clientsecret) .map(res =>res.json());
+    return this.http.get("http://github.com + this.username + "?client_id=" +  this.client + &client_secrete =" + this .clientsecret),
+    .map(res =>res.json());
+
+  }
+  getProfileRepos(){return this.http.get("http://github.com + this.username + "/repos?client_id =" +  this.client + &client_secrete =" + this .clientsecret),
+  .map(res =>res.json());
+
 
   }
   
