@@ -1,7 +1,10 @@
 <div *ngIf="profile">
     <div class="panel panel-default">
         <div class="panel-heading">
-            
+            {{profile.name}}<small>profile.login</small>
+         <span ngIf="profile.school">,studing at {{profile.school}}</span>
+         {{profile.location}}   
+
         </div>
     </div>
 
