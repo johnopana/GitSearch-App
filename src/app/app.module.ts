@@ -11,11 +11,13 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     ProfileComponent
-    HttpModule
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
+
   ],
   providers: [profileService],
   bootstrap: [AppComponent]
