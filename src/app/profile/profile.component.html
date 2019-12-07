@@ -9,7 +9,21 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
-                 <img src="{{ profile.avator_url}}" alt="">   
+                 <img src="{{ profile.avator_url}}"class="circle img-responsive" alt="profile image">   
+                </div>
+                <div class="column-md-5">
+                    <li class="list-gruop items" *ngIf="profile.bio">{{profile.bio}}</li>
+                    <li class="list-gruop items" *ngIf="profile.hireable">Available for hire</li>
+                    <li class="list-gruop items" *ngIf="profile.blog"><a href="{{profile.blog}}" target="blank">{{profile.blog}}</a></li>
+                    <li class="list-gruop items" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+
+
+                    
+                </div>
+                <div class="col-md-4">
+                 <p>
+                     <span class="lebel lebel-default">{{profile.followers}} Followers</span>
+                 </p>   
                 </div>
             </div>
         </div>
