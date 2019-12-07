@@ -3,8 +3,15 @@
         <div class="panel-heading">
             {{profile.name}}<small>profile.login</small>
          <span ngIf="profile.school">,studing at {{profile.school}}</span>
-         {{profile.location}}   
-
+         {{profile.location}} 
+         
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                 <img src="{{ profile.avator_url}}" alt="">   
+                </div>
+            </div>
         </div>
     </div>
 
