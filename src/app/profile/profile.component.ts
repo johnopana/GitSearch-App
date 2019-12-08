@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { profileService } from  '../../services/srofile/services';
+import { profileService } from  '../../services/profile/services';
 import { ProfileService } from '../profile.service';
 import { Profile } from 'selenium-webdriver/firefox';
 
