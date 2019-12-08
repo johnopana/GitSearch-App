@@ -1,34 +1,38 @@
 <form action="" class="search-name">
   <div class="form-group">
-   <input type="text" class="form-controle" placeholder="search git username"[(ngModel)]="username" name="username" (keyup)="find profile()">   
+   <input type="text" class="form-controle" placeholder="search git users with username"[(ngModel)]="username" name="username" (keyup)="findProfile()">   
   </div>  
 </form>
 <div *ngIf="profile">
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{profile.name}}<small>profile.login</small>
-         <span ngIf="profile.school">,studing at {{profile.school}}</span>
+            {{profile.name}}<small>({{profile.login}})</small>
+         <span *ngIf="profile.school">,Study at {{profile.school}}</span>
          {{profile.location}} 
          
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-3">
-                 <img src="{{ profile.avator_url}}"class="circle img-responsive" alt="profile image">   
+                 <img src="{{ profile.avatar_url}}"class="img-circle img-responsive" alt="profile Image">   
                 </div>
                 <div class="column-md-5">
+                    <ul class="list-group">
                     <li class="list-gruop items" *ngIf="profile.bio">{{profile.bio}}</li>
                     <li class="list-gruop items" *ngIf="profile.hireable">Available for hire</li>
-                    <li class="list-gruop items" *ngIf="profile.blog"><a href="{{profile.blog}}" target="blank">{{profile.blog}}</a></li>
+                    <li class="list-gruop items" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
                     <li class="list-gruop items" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+                </ul>
                 </div>
                 <div class="col-md-4">
+                    <div>
                  <p>
                      <span class="lebel lebel-default">{{profile.followers}} Followers</span>
-                     <span class="lebel lebel-prinmary">Following {{profile.following}} Followers</span>
+                     <span class="lebel lebel-prinmary">Following {{profile.following}} Following</span>
                      <span class="lebel lebel-success">{{profile.public_gists}} Public gists</span> 
                      <span class="lebel lebel-info">{{profile.public_repos}} Public Repos</span>
                  </p>
+                </div>
                  <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-md">view profile on github</a></p>
                  <div class="panel-heading">
                      <h3 class="panel-title">Repos</h3>
@@ -36,7 +40,7 @@
                     <div class="panel-body" *ngFor="let repo of repos">
                      <p class="clearfix">
                       {{repo.name}} <a href="{{repo.html_url}}" target="_blank"class="btn btn-md btn-warning pull-right">
-                          View this project on github</a>    
+                           View this project on github</a>    
                      </p> 
                      <p>{{repo.description}}</p>  
                     </div> 

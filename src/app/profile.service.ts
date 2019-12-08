@@ -11,20 +11,16 @@ export class ProfileService {
   private clientsecret ='';
 
   constructor(private http:HttpClient) { 
-    console.log("service is ready"!);
-    this.username =" Johnopana";
+    console.log("service is now ready!");
+    this.username ='johnopana';
   }
   getprofileInfo(){
-    return this.http.get("http://github.com" + this.username + "?client_id=" +  this.client + & client_secrete = " + this .clientsecret),
-    .map(res =>res.json());
+    return this.http.get("http://api./github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret).map (res => res.json());
+  }
+  getProfileRepos(){return this.http.get("http://api/github.com/users/" +  this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret).map (res => res.json());
 
   }
-  getProfileRepos(){return this.http.get("http://github.com + this.username + "/repos?client_id =" +  this.client + &client_secrete =" + this .clientsecret),
-  .map(res =>res.json());
-
-
-  }
-  updateProfile(username:string){
-    this.username =username;
-  }
+updateusername(username:string){
+ this.username = username; 
+}
 }
