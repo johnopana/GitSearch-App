@@ -74,22 +74,24 @@
                   </p>
           </div>
          
-         
+          <div class="panel-heading">
+                <h3 class="panel-title">Repos</h3>
+              </div>
           <div id="rep" class="panel-body" *ngFor="let repo of repos">
-                <div class="panel-heading">
-                        <h3 class="panel-title">Repos</h3>
-                      </div>
-            <p class="clearfix">
+                
+            <p style="text-decoration:underline; font-size:20px;" class="clearfix">
               {{ repo.name }}
-              <a
-                href="{{ repo.html_url }}"
-                target="_blank"
-                class="btn btn-md btn-warning pull-left"
-              >
-                View this project on github</a
-              >
+              
             </p>
             <p>{{ repo.description }}</p>
+            <p>
+            <a
+                href="{{ repo.html_url }}"
+                target="_blank"
+                class="btn btn-md btn-warning "
+              >
+                View this project on github</a
+              ></p>
           </div>
         </div>
       </div>
