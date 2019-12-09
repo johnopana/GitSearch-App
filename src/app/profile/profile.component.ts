@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ProfileService } from "../profile.service";
-import { Profile } from "selenium-webdriver/firefox";
 
 @Component({
   selector: "app-profile",
@@ -12,7 +11,18 @@ export class ProfileComponent implements OnInit {
   repos: any;
   username: string;
 
-  constructor(private ProfileService: ProfileService) {}
+  constructor(private ProfileService: ProfileService) {
+
+    this.ProfileService.updateProfile(this.username);
+    this.ProfileService.getprofileInfo().subscribe(Profile => {
+      console.log(Profile);
+      this.profile = Profile;
+    });
+    this.ProfileService.getProfileRepos().subscribe(repos => {
+      console.log(repos);
+      this.repos = repos;
+    });
+  }
   findProfile() {
     this.ProfileService.updateProfile(this.username);
     this.ProfileService.getprofileInfo().subscribe(Profile => {

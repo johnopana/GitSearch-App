@@ -15,4 +15,5 @@ import { ProfileComponent } from "./profile/profile.component";
   providers: [ProfileService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {}

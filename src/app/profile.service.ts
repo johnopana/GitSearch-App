@@ -1,14 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import "rxjs";
+
 @Injectable({
   providedIn: "root"
 })
 export class ProfileService {
-  updateProfile(username: string) {
-    throw new Error("Method not implemented.");
-  }
-
   private username: string;
   private clientid = "84d0bf1b809bed265e1a";
   private clientsecret = "f0d33cef3ec237a7534b7757099ae97c29d488df";
@@ -19,7 +15,7 @@ export class ProfileService {
   }
   getprofileInfo() {
     return this.http.get(
-      "http://api./github.com/users/" +
+      "http://api.github.com/users/" +
         this.username +
         "?client_id=" +
         this.clientid +
@@ -28,17 +24,19 @@ export class ProfileService {
     );
   }
   getProfileRepos() {
-    return this.http
-      .get(
-        "http://api/github.com/users/" +
-          this.username +
-          "/repos?client_id=" +
-          this.clientid +
-          "&client_secret=" +
-          this.clientsecret
-      );
+    return this.http.get(
+      "http://api.github.com/users/" +
+        this.username +
+        "/repos?client_id=" +
+        this.clientid +
+        "&client_secret=" +
+        this.clientsecret
+    );
   }
-  updateusername(username: string) {
+   updateusername(username: string) {
+    this.username = username;
+  }
+  updateProfile(username: string) {
     this.username = username;
   }
 }
