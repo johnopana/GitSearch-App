@@ -1,3 +1,4 @@
+<h1>GitSearch-App</h1>
 <form action="" class="search-name">
   <div class="form-group">
     <input
@@ -13,73 +14,77 @@
 </form>
 <div *ngIf="profile">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      {{ profile.name }}<small>({{ profile.login }})</small>
-      <span *ngIf="profile.school">,Study at {{ profile.school }}</span>
-      {{ profile.location }}
-    </div>
+    
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-3">
-          <img
+        <div  class="col-md-4 text-center">
+          <img  id="prof"
             src="{{ profile.avatar_url }}"
-            class="img-circle img-responsive"
+            class="img rounded-circle img-responsive"
             alt="profile Image"
           />
-        </div>
-        <div class="column-md-5">
+        
+                <div class="panel-heading">
+                        {{ profile.name }}<small>({{ profile.login }})</small>
+                        <span *ngIf="profile.school">,Study at {{ profile.school }}</span>
+                        {{ profile.location }}
+                      </div>
           <ul class="list-group">
-            <li class="list-gruop items" *ngIf="profile.bio">
+            <li class="list-group items" *ngIf="profile.bio">
               {{ profile.bio }}
             </li>
-            <li class="list-gruop items" *ngIf="profile.hireable">
+            <li class="list-group items" *ngIf="profile.hireable">
               Available for hire
             </li>
-            <li class="list-gruop items" *ngIf="profile.blog">
+            <li class="list-group items" *ngIf="profile.blog">
               <a href="{{ profile.blog }}" target="_blank">{{
                 profile.blog
               }}</a>
             </li>
-            <li class="list-gruop items" *ngIf="profile.email">
+            <li class="list-group items" *ngIf="profile.email">
               <a href="emailto:{{ profile.email }}">{{ profile.email }}</a>
             </li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <div>
+        <div class="col-md-2"></div>
+        <div id="details" class="col-md-4 text-left">
+          <div class="infor">
             <p>
               <span class="lebel lebel-default"
                 >{{ profile.followers }} Followers</span
-              >
+              ><br>
               <span class="lebel lebel-prinmary"
-                >Following {{ profile.following }} Following</span
-              >
+                > {{ profile.following }} Following</span
+              ><br>
               <span class="lebel lebel-success"
                 >{{ profile.public_gists }} Public gists</span
-              >
+              ><br>
               <span class="lebel lebel-info"
                 >{{ profile.public_repos }} Public Repos</span
               >
             </p>
+
+            <p>
+                    <a
+                      href="{{ profile.html_url }}"
+                      target="_blank"
+                      class="btn btn-success btn-md"
+                      >view profile on github</a
+                    >
+                  </p>
           </div>
-          <p>
-            <a
-              href="{{ profile.html_url }}"
-              target="_blank"
-              class="btn btn-success btn-md"
-              >view profile on github</a
-            >
-          </p>
-          <div class="panel-heading">
-            <h3 class="panel-title">Repos</h3>
-          </div>
-          <div class="panel-body" *ngFor="let repo of repos">
+         
+         
+          <div id="rep" class="panel-body" *ngFor="let repo of repos">
+                <div class="panel-heading">
+                        <h3 class="panel-title">Repos</h3>
+                      </div>
             <p class="clearfix">
               {{ repo.name }}
               <a
                 href="{{ repo.html_url }}"
                 target="_blank"
-                class="btn btn-md btn-warning pull-right"
+                class="btn btn-md btn-warning pull-left"
               >
                 View this project on github</a
               >
