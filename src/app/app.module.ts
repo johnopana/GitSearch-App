@@ -8,12 +8,13 @@ import { ProfileService } from "./profile.service";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProfileComponent } from "./profile/profile.component";
-import { DatecountPipe } from './date.pipe';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { CustomDateFormat } from './date.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, ProfileComponent,TimeAgoPipe, DatecountPipe, FooterComponent],
+  declarations: [AppComponent, ProfileComponent, CustomDateFormat, FooterComponent, HomeComponent, HighlightDirective],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ProfileService],
   bootstrap: [AppComponent]

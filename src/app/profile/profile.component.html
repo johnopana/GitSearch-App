@@ -50,7 +50,7 @@
           <div class="col-md-2"></div>
           <div id="details" class="col-md-4 text-left">
             <div class="infor">
-              <p>
+              <p highlight>
                 <span class="lebel lebel-default"
                   >{{ profile.followers }} Followers</span
                 ><br />
@@ -84,6 +84,16 @@
                 class="clearfix text-center"
               >
                 {{ repo.name }}
+              </p>
+              <p>
+                <strong
+                  ><em
+                    >Created on:
+                    <span style="color:brown">{{
+                      repo.created_at | date
+                    }}</span></em
+                  ></strong
+                >
               </p>
               <p>{{ repo.description }}</p>
               <p>
