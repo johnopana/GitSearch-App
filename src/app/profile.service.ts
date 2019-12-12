@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class ProfileService {
   private username: string;
-  private clientid = "84d0bf1b809bed265e1a";
-  private clientsecret = "f0d33cef3ec237a7534b7757099ae97c29d488df";
+  private clientid = "053e4f137946b59bf6fb";
+  private clientsecret = "68cec4984fc7163541c43cd828af13c020e786fb";
 
   constructor(private http: HttpClient) {
     console.log("service is now ready!");
@@ -33,7 +33,7 @@ export class ProfileService {
         this.clientsecret
     );
   }
-   updateusername(username: string) {
+  updateusername(username: string) {
     this.username = username;
   }
   updateProfile(username: string) {
